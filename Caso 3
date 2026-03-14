@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+
+        String[] produtos = {
+            "Arroz", "Feijão", "Macarrão", "Leite", "Pão",
+            "Café", "Açúcar", "Óleo", "Sal", "Biscoito"
+        };
+
+        for (int i = 0; i < produtos.length; i++) {
+            System.out.println((i + 1) + " - " + produtos[i]);
+        }
+
+    }
+}

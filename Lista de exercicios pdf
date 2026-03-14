@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int voto;
+        int candidatoA = 0;
+        int candidatoB = 0;
+        int candidatoC = 0;
+
+        System.out.println("=== Sistema de Votação ===");
+
+        while (true) {
+
+            System.out.println("\nMenu de votação:");
+            System.out.println("1 - Candidato A");
+            System.out.println("2 - Candidato B");
+            System.out.println("3 - Candidato C");
+            System.out.println("0 - Encerrar votação");
+
+            System.out.print("Digite seu voto: ");
+            voto = scanner.nextInt();
+
+            if (voto == 0) {
+                break;
+            }
+
+            switch (voto) {
+                case 1:
+                    candidatoA++;
+                    break;
+
+                case 2:
+                    candidatoB++;
+                    break;
+
+                case 3:
+                    candidatoC++;
+                    break;
+
+                default:
+                    System.out.println("Voto inválido");
+            }
+        }
+
+        System.out.println("\nResultado da votação:");
+        System.out.println("Candidato A: " + candidatoA + " votos");
+        System.out.println("Candidato B: " + candidatoB + " votos");
+        System.out.println("Candidato C: " + candidatoC + " votos");
+
+        if (candidatoA > candidatoB && candidatoA > candidatoC) {
+            System.out.println("Vencedor: Candidato A");
+        } 
+        else if (candidatoB > candidatoA && candidatoB > candidatoC) {
+            System.out.println("Vencedor: Candidato B");
+        } 
+        else if (candidatoC > candidatoA && candidatoC > candidatoB) {
+            System.out.println("Vencedor: Candidato C");
+        } 
+        else {
+            System.out.println("Houve empate na votação");
+        }
+
+        scanner.close();
+    }
+}
